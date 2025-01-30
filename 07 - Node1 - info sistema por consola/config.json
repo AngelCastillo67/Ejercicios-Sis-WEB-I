@@ -1,0 +1,7 @@
+{
+    "logInterval": 5000,
+    "logCPU": false,
+    "logMemory": true,
+    "logSystemUptime": true,
+    "logProcessUptime": true
+}

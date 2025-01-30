@@ -1,0 +1,27 @@
+/* Este es un comentario en CSS */
+body {
+    background-color: #f0f0f0; /* Esto establece el color de fondo de la página */
+    font-family: Arial, sans-serif; /* Esto establece la fuente del texto */
+}
+
+h1 {
+    color: #333; /* Esto establece el color del texto del encabezado */
+    text-align: center; /* Esto centra el texto del encabezado */
+}
+
+.column {
+    float: left;
+    width: 60%;
+    height: 300px;
+}
+
+p {
+    color: #666; /* Esto establece el color del texto del párrafo */
+    line-height: 1.5; /* Esto establece la altura de línea del texto del párrafo */
+}
+
+/* Ejemplo de uso de !important */
+p.important {
+    color: red !important; /* Esto establece el color del texto del párrafo a rojo, ignorando otras reglas */
+    font-weight: bold; /* Esto establece el texto en negrita */
+}

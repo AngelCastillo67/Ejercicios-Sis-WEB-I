@@ -1,0 +1,39 @@
+<!DOCTYPE html> <!-- Define el tipo de documento HTML -->
+<html lang="en"> <!-- Configura el idioma del contenido -->
+<head> <!-- Contiene metadatos y el título de la página -->
+  <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+  <title>Ejemplo AJAX</title> <!-- Establece el título de la página -->
+</head>
+<body> <!-- Cuerpo principal del documento -->
+  <h1>Usuarios</h1> <!-- Encabezado principal -->
+  <button id="cargarUsuarios">Cargar usuarios</button> <!-- Botón para cargar usuarios -->
+  <ul id="listaUsuarios"></ul> <!-- Lista donde se mostrarán los usuarios -->
+
+  <script> <!-- Sección de script para manejar la lógica AJAX -->
+    document.getElementById('cargarUsuarios').addEventListener('click', function() {
+      // Crear el objeto XMLHttpRequest
+      const xhr = new XMLHttpRequest(); // Define el objeto para hacer solicitudes HTTP
+
+      // Configurar la solicitud (GET a una API pública)
+      xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true); // Indica el método y la URL
+
+      // Manejar la respuesta
+      xhr.onload = function() { // Se ejecuta cuando la respuesta está lista
+        if (this.status === 200) { // Verifica si la respuesta es exitosa
+          const usuarios = JSON.parse(this.responseText); // Convierte la respuesta JSON en objeto
+          const lista = document.getElementById('listaUsuarios');
+          lista.innerHTML = ''; // Limpiar la lista
+          usuarios.forEach(usuario => {
+            const li = document.createElement('li');
+            li.textContent = `${usuario.name} (${usuario.email})`;
+            lista.appendChild(li);
+          });
+        }
+      };
+
+      xhr.send(); // Envía la solicitud al servidor
+    });
+  </script>
+</body>
+</html>

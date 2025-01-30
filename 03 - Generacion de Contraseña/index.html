@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Enlaza el archivo JavaScript que contiene la lógica para generar contraseñas -->
+    <script src="scripts.js" defer ></script>
+    <title>My First Web Page</title>
+  </head>
+  <body>
+    <!-- Título de la página -->
+    <h1>Generador de contraseñas</h1>
+    <!-- Descripción de la funcionalidad de la página -->
+    <p>Introduzca el número de palabras combinadas que quiere que contenga la contraseña: </p>
+    <div id="myDiv">
+        <!-- Formulario para ingresar el número de palabras -->
+        <form id="myForm">
+            <!-- Etiqueta para el input del número de palabras -->
+            <label for="numWords">Introduzca un número (1-10)</label>
+            <!-- Input para ingresar el número de palabras, con un valor mínimo de 1 y máximo de 10 -->
+            <input type="number" id="numWords" value="Hello" min="1" max="10" required> 
+        </form>
+        <!-- Botón para generar la contraseña -->
+        <button id="btn" onclick="changeText()">Generar</button>
+        <!-- Elemento donde se mostrará la contraseña generada -->
+        La contraseña es: <span id="password"></span>
+    </div>
+  </body>
+</html>
